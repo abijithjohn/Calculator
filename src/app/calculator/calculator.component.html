@@ -1,0 +1,45 @@
+<div class="calculator">
+
+   
+    <div class="calculator-header">
+      <h1 class="calculator-header-main">Casio</h1>
+      <h5 class="calculator-header-sub">Standard calculator</h5>
+    </div>
+    <div class="solar-wrapper">
+      <img src="../../assets/images/solarPanel.png">
+    </div>
+    <div class="calculator-screen-wrapper">
+     <div [class]="calculatorPower?'calculator-screen':'calculator-screen screen-off '">
+       <span class="calculator-screen-operator">{{calculatorPower?operator:null}}</span>
+       <span [class]="powerOffGreeting?'calculator-screen-off-greeting':'calculator-screen-digit'">{{calculatorPower?initialValue:null}}</span>
+      </div>
+    </div>
+  
+    <div class="calculator-keys">
+    <button type="button" (click) = "powerToggle()" class="calc-power-reset" value="+">AC</button>
+    <button type="button" (click) = "resetField()"  class="calc-power-reset" value="reset">C</button>
+    <button type="button" (click) = "inputOperation('√')" value="√">√</button>
+    <button type="button" (click) = "inputOperation('/')" value="/">&divide;</button>
+  
+    <button type="button" (click) = "inputNumber('7')" value="7">7</button>
+    <button type="button" (click) = "inputNumber('8')" value="8">8</button>
+    <button type="button" (click) = "inputNumber('9')" value="9">9</button>
+    <button type="button" (click) = "inputOperation('*')" value="*">&times;</button>
+
+    <button type="button" (click) = "inputNumber('4')" value="4">4</button>
+    <button type="button" (click) = "inputNumber('5')" value="5">5</button>
+    <button type="button" (click) = "inputNumber('6')" value="6">6</button>
+    <button type="button" (click) = "inputOperation('-')" value="-">-</button>
+
+    <button type="button" (click) = "inputNumber('1')" value="1">1</button>
+    <button type="button" (click) = "inputNumber('2')" value="2">2</button>
+    <button type="button" (click) = "inputNumber('3')" value="3">3</button>
+
+    <button type="button" (click) = "inputNumber('0')" value="0">0</button>
+    <button type="button" (click) = "appendDecimal()"value=".">.</button>
+    <button type="button" (click) = "inputOperation('=')"  value="+">=</button>
+
+    <button type="button" (click) = "inputOperation('+')" class="plus-sign" value="=">+</button>
+  
+    </div>
+  </div>
